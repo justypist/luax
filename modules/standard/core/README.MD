@@ -16,12 +16,13 @@
 2. `modules(...<string>)`
 > 批量导入子模块
 ```
-    ...<string>:子模块名称列表
-
-    样例:
-        file A      : 
-            return modules("a","b")
-        file main   : 
-            local lib=import("A")
-            print(lib.a,lib.b)
+样例:
+----dir
+    a.lua
+    b.lua
+    init.lua: 
+        return modules("a","b")
+main.lua: 
+        local lib=import("dir/init")
+        print(lib.a,lib.b)
 ```
