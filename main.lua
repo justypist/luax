@@ -3,21 +3,30 @@ _G.import=require("modules/standard/core/import")
 _G.modules=import("modules/standard/core/modules")
 -- Application
 local functional=import("modules/standard/functional/init")
-local t={a=1,b=2,3}
-functional.foreach(t,function(v,k)
-    print(k,v)
-end)
+local t={a=1,b=2,d=10}
+
 functional.map(t,function(v,k)
     return v*100
 end)
 t=functional.filter(t,function(v,k)
     return v>150
 end)
+functional.foreach(t,function(v,k)
+    print(k,v)
+end)
 local result=functional.fold(t,0,function(l,r)
     return l+r
 end)
 print(result)
 local flag=functional.every(t,function(v)
+    return v>250
+end)
+print(flag and "true" or "false")
+flag=functional.some(t,function(v)
     return v>200
 end)
 print(flag and "true" or "false")
+local v,k,t=functional.find(t,function(v)
+    return v>250
+end)
+print(k,v)
