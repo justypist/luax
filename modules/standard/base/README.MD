@@ -1,5 +1,5 @@
 # 基础库
-1. `stringify(any)`
+1. `stringify(any):string`
 > 将任意参数字符化
 ```
 local t={

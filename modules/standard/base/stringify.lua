@@ -1,6 +1,6 @@
 --[[
     字符化
-    stringify(table)
+    stringify(table):string
 ]]
 local function stringify(var,indentation,links)
     -- 获取类型
