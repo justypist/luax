@@ -1,3 +1,3 @@
 return modules(
-    "foreach","map","filter","fold","every"
+    "foreach","map","filter","fold","every","some","find"
 )
