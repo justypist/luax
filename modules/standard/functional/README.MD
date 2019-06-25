@@ -1,5 +1,5 @@
 # 函数式接口
-> 所有函数式接口内对于数据的 **修改/删除/添加** 均为原始操作，不会触发原表
+> 所有函数式接口内对于数据的 **修改/删除/添加** 均为原始操作，不会触发元表
 1. `foreach(table,(any,string|number,table)=>void):table`
 > 遍历一个表 对于表中每个键值对使用回调函数进行处理
 ```
@@ -58,4 +58,30 @@ local flag=every(t,function(v)
     return v<10
 end)
 print(flag and "true" or "false")
+```
+6. `some(table,(any,string|number,table)=>boolean):boolean`
+> 遍历一个表 依次使用表内元素调用回调函数 期间回调函数一旦返回true则整个函数立刻返回true 否则最终返回false
+```
+local t={1,2,3,4,5}
+local flag=some(t,function(v)
+    return v>3
+end)
+print(flag and "true" or "false")
+```
+7. `find(table,(any,string|number,table)=>boolean):any,string|number|table`
+> 遍历一个表 依次使用表内元素调用回调函数 期间回调函数一旦返回true则整个函数立刻返回相应value,key,table 否则最终返回nil
+```
+local t={
+    {
+        name="a",
+        age=10
+    },{
+        name="b",
+        age=18
+    }
+}
+local result=find(t,function(v)
+    return v.age>=18
+end)
+print(result.name)
 ```
