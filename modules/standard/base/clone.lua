@@ -2,7 +2,6 @@
     深度克隆
     clone(any):any
 ]]
-assert(type,"type 函数缺失")
 local function clone(var)
     if type(var)~="table" then return var end;
     local new={};
