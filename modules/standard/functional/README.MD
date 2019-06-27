@@ -45,7 +45,7 @@ end)
 > 规约一个表 使用初始值依次对表中每个元素使用回调函数处理 并根据回调函数的返回值更新初始值 返回规约后的最终值
 ```
 local t={1,5,10,20}
-local sum=reduce(0,function(left,right)
+local sum=fold(0,function(left,right)
     return left+right
 end)
 print(sum)
