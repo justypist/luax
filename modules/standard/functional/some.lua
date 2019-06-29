@@ -1,6 +1,6 @@
 --[[
     存在
-    some(table,(any,string|number,table)=>boolean):boolean
+    some(table,(any,string|number,table):boolean):boolean
 ]]
 local function some(tbl,callback)
     for key,value in pairs(tbl) do

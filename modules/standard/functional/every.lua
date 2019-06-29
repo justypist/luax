@@ -1,5 +1,5 @@
 --[[
-    every(table,(any,string|number,table)=>boolean):boolean
+    every(table,(any,string|number,table):boolean):boolean
 ]]
 local function every(tbl,callback)
     for key,value in pairs(tbl) do

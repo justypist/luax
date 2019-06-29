@@ -1,6 +1,6 @@
 --[[
     映射
-    map(table,(any,string|number,table)=>any):table
+    map(table,(any,string|number,table):any):table
 ]]
 local function map(tbl,callback)
     for key,value in pairs(tbl) do

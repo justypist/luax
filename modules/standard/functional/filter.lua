@@ -1,6 +1,6 @@
 --[[
     过滤
-    filter(table,(any,string|number,table)=>boolean):table
+    filter(table,(any,string|number,table):boolean):table
 ]]
 assert(table and table.insert,"table.insert 函数缺失")
 assert(type,"type 函数缺失")
