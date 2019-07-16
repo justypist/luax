@@ -1,3 +1,5 @@
 return modules(
-    "stringify","clone","overload","BaseVariableTypeNameSet","FnCombine"
+    "stringify","clone","overload",
+    "BaseVariableTypeNameSet","FnCombine",
+    "dump"
 )
