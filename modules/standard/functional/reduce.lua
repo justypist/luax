@@ -1,11 +1,13 @@
 --[[
     规约
-    reduce(table,any,(any,any,string|number,table):any):any
+    reduce(table,(any:any):any):any
 ]]
-local function reduce(tbl,initValue,callback)
-    for key,value in pairs(tbl) do
-        initValue=callback(initValue,value,key,tbl);
+local next=next;
+local function reduce(tbl,callback)
+    local _,left=next(tbl);
+    for _,right in next,tbl,left do
+        left=callback(left,right);
     end
-    return initValue;
+    return left;
 end
 return reduce;
