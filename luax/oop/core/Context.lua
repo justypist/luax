@@ -1,6 +1,6 @@
 --[[
-    Context
-    上下文
+    Context(table|nil):table
+    生成新的上下文
 ]]
 local Meta=import("Meta")
 -- local _ENV=_G

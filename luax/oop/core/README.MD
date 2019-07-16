@@ -15,6 +15,7 @@ Meta.setMetaField(t,"index",function(t)
 end)
 print(t.a,t.adsad)
 ```
+---
 2. MetaField
 > 元字段
 
@@ -43,3 +44,16 @@ call|调用|()
 index|索引|
 newindex|新值|
 gc|垃圾回收|
+---
+3. Context(table|nil):table
+> 生成新的上下文
+```lua
+local method={
+    add=function(a,b)
+        return a+b
+    end
+}
+local ctx=Context(method)
+local res=ctx.add(1,2)
+print(res)
+```
