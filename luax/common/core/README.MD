@@ -26,3 +26,10 @@ main.lua:
         local lib=import("dir/init")
         print(lib.a,lib.b)
 ```
+3. `optional(!nil,string):!nil`
+> 判断参数是否存在 否则抛出异常
+```lua
+--local a=100
+local b=optional(a,"a") -- 若未定义a 则抛出异常
+print(b)
+```
