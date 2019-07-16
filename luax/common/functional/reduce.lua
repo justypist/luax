@@ -5,7 +5,7 @@
 local next=next;
 local function reduce(tbl,callback)
     local _,left=next(tbl);
-    for _,right in next,tbl,left do
+    for _,right in next,tbl,_ do
         left=callback(left,right);
     end
     return left;
