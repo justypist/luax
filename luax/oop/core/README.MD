@@ -15,3 +15,31 @@ Meta.setMetaField(t,"index",function(t)
 end)
 print(t.a,t.adsad)
 ```
+2. MetaField
+> 元字段
+
+identifier|name|operator
+:--:|:-----:|:--:
+add|加|+
+sub|减|-
+mul|乘|*
+div|除|/
+mod|模|%
+pow|幂|^
+unm|负|-
+idiv|整除|//
+band|按位与|&
+bor|按位或|`|`
+bxor|按位异或|~
+bnot|按位否|~
+shl|左移|<<
+shr|右移|>>
+concat|连接|..
+len|取长|#
+eq|相等|==
+lt|小于|<
+le|小于等于|<=
+call|调用|()
+index|索引|
+newindex|新值|
+gc|垃圾回收|

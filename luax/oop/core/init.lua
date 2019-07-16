@@ -1,3 +1,3 @@
 return modules(
-    "Meta"
+    "MetaField","Meta","Context"
 );

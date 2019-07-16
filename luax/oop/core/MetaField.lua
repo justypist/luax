@@ -1,0 +1,30 @@
+--[[
+    MetaField
+    元字段
+]]
+local MetaField={
+    ["add"]="__add",
+    ["sub"]="__sub",
+    ["mul"]="_mul",
+    ["div"]="__div",
+    ["mod"]="__mod",
+    ["pow"]="__pow",
+    ["unm"]="__unm",
+    ["idiv"]="__idiv",
+    ["band"]="__band",
+    ["bor"]="__bor",
+    ["bxor"]="__bxor",
+    ["bnot"]="__bnot",
+    ["shl"]="__shl",
+    ["shr"]="__shr",
+    ["concat"]="__concat",
+    ["len"]="__len",
+    ["eq"]="__eq",
+    ["lt"]="__lt",
+    ["le"]="__le",
+    ["index"]="__index",
+    ["newindex"]="__newindex",
+    ["call"]="__call",
+    ["gc"]="__gc"
+};
+return MetaField;
