@@ -29,7 +29,7 @@ print(t==t2 and "true" or "false")
 * 定义函数
 `define(table,function,...<string>):table`
 * 匹配函数
-`match(table,...<any>):function|nil`  
+`match(table,...<any>):function|nil`
 **两者需要配合使用 只提供底层实现 需要自行封装改善代码风格**
 ```lua
 local overload=import("modules/standard/base/overload")
@@ -51,3 +51,5 @@ define(funcSet,function()end)
 define(funcSet,function(...)end,"...")
 此时若参数列表为空 则优先匹配第一个函数体 `...`作为可变参数 优先级最低
 ```
+5. Noop
+> 空函数 (do nothing)
