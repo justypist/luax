@@ -18,7 +18,7 @@ local drive = function(ParentClass,ClassName)
     builder[KW.METAFIELD][KW.ATTRIBUTE]={}
     builder[KW.STATIC]={}
     -- 继承
-    setmetatable(builder[KW.METAFIELD],getmetatable(ParentClass))
+    setmetatable(builder[KW.METAFIELD]["__index"],getmetatable(ParentClass))
     -- dump(builder)
     setmetatable(builder,{
         __index={
