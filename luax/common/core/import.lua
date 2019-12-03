@@ -118,12 +118,12 @@ function import(relativePath)
     end
     -- print("绝对路径字符串:"..absoluteStr)
     -- 导入模块
-    local modules={require(absoluteStr)}
+    local module=require(absoluteStr)
     -- print("获取module:"..moduleName)
     -- 恢复当前路径数组
     currentPathArr=bak
     -- print("恢复路径:"..join(currentPathArr,"/"))
     -- 返回得到的模块
-    return table.unpack(modules)
+    return module
 end
 return import
