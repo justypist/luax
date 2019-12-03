@@ -24,19 +24,24 @@ local drive = function(ParentClass,ClassName)
         __index={
             attr=function(builder,attrName,attrValue)
                 builder[KW.METAFIELD][KW.ATTRIBUTE][attrName]=attrValue
+                return builder
             end,
             method=function(builder,fnName,fnBody)
                 builder[KW.METAFIELD]["__index"][fnName]=fnBody
+                return builder
             end,
             meta=function(builder,metaName,metaValue)
                 assert(metaName~="__index" and metaName~="__call","禁止直接修改__index/__call字段",2)
                 builder[KW.METAFIELD][metaName]=metaValue
+                return builder
             end,
             static=function(builder,staticName,staticValue)
                 builder[KW.STATIC][staticName]=staticValue
+                return builder
             end,
             constructor=function(builder,fn)
                 builder[KW.METAFIELD]["__call"]=fn
+                return builder
             end,
             build=function(builder)
                 local class = builder[KW.STATIC]
