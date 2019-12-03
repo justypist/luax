@@ -26,7 +26,7 @@ local dump = import("luax/common/base/dump")
 
 -- 元表操作
 --
-local meta = import("luax/oop/core/Meta")
+local meta = import("luax/common/table/Meta")
 --
 
 -- 添加监听
