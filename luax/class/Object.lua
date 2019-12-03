@@ -4,13 +4,13 @@
     最基础的对象
     所有对象的父类
 ]]
-local drive = import("../oop/core/drive")
+local generateBuilder = import("../oop/core/generateBuilder")
 local base = {}
-local Object = drive({},"Object")
+local Object = generateBuilder({},"Object")
 
 -- 派生
 Object:method("drive",function(this,ClassName)
-    return drive(this,ClassName)
+    return generateBuilder(this,ClassName)
 end)
 -- 输出整个对象
 Object:method("dump",function(this)
