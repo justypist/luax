@@ -40,6 +40,4 @@ meta.setMetaField(_ENV,"__index",function(ENV,k)
     assert(v,"全局变量["..stringify(k).."]不存在",2)
     return v
 end)
--- 禁止修改全局环境的元表
-meta.setMetaField(_ENV,"__metatable",true)
 --
