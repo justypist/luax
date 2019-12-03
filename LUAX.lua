@@ -38,7 +38,9 @@ end)
 -- 禁止访问不存在的全局环境
 meta.setMetaField(_ENV,"__index",function(ENV,k)
     local v = rawget(ENV,k)
-    assert(v,"全局变量["..stringify(k).."]不存在",2)
+    if not v then
+        error("全局变量["..stringify(k).."]不存在",2)
+    end
     return v
 end)
 --
