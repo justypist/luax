@@ -21,7 +21,8 @@ local functional=import("luax/common/functional/init");
 -- 字符化
 ---
 local stringify=import("luax/common/base/stringify");
-local dump = import("luax/common/base/dump")
+-- 调试用
+dump = import("luax/common/base/dump")
 ---
 
 -- 元表操作
