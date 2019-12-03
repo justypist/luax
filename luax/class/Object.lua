@@ -23,5 +23,7 @@ end)
 -- getClassName
 -- getFullClassName
 
+Object:static("VERSION","1.0.0")
+
 Object = Object:build()
 return Object
