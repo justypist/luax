@@ -2,8 +2,7 @@
     Number
     数字
 ]]
-local Object = import("../Object")
-local Number = Object:drive("Number")
+local Number = import("Base"):drive("Number")
 Number:attr("value",0)
 Number:constructor(function(this,num)
     this.value = tonumber(num)

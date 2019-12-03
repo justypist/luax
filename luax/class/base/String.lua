@@ -2,8 +2,7 @@
     String
     字符串对象
 ]]
-local Object = import("../Object")
-local String = Object:drive("String")
+local String = import("Base"):drive("String")
 
 String:attr("value","")
 String:constructor(function(this,string)
