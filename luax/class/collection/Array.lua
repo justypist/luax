@@ -2,8 +2,7 @@
     Array
     数组
 ]]
-local Object = import("Object")
-local Array = Object:drive("Array")
+local Array = import("Collection"):drive("Array")
 
 Array:attr("value",{})
 Array:constructor(function(this)
