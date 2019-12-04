@@ -4,6 +4,7 @@
 ]]
 local KW = import("KW")
 local Noop = import("../../common/base/Noop")
+local extend = import("extend")
 local generateBuilderBody = function(ParentClass,ClassName)
     local builder={}
     -- 元字段 最终会保留作为class元表
@@ -23,7 +24,7 @@ local generateBuilderBody = function(ParentClass,ClassName)
     -- 静态属性、方法存储区
     builder[KW.STATIC]={}
     -- 继承
-    setmetatable(builder[KW.METAFIELD][KW.METHOD],ParentClass==nil and nil or getmetatable(ParentClass))
+    extend(builder[KW.METAFIELD][KW.METHOD],ParentClass)
     return builder
 end
 return generateBuilderBody;
