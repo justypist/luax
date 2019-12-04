@@ -64,4 +64,12 @@ Array:method("join",function(this,delimiter,left,right)
     return table.concat(this.value,delimiter,left,right)
 end)
 
+-- 是否包含
+-- 只能判断简单值
+Array:method("include",function(this,value)
+    return this:some(function(v)
+        return v==value
+    end)
+end)
+
 return Array:build()
