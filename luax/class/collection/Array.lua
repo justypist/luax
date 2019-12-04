@@ -58,4 +58,10 @@ Array:method("last",function(this)
     return this:get(this:length())
 end)
 
+-- 数组元素合并为字符串
+Array:method("join",function(this,delimiter,left,right)
+    delimiter = delimiter or ','
+    return table.concat(this.value,delimiter,left,right)
+end)
+
 return Array:build()
