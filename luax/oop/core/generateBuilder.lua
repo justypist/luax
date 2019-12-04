@@ -9,8 +9,9 @@ local generateBuilderBody = import("generateBuilderBody")
 local builderMethod = import("builderMethod")
 
 local generateBuilder = function(ParentClass,ClassName)
-    -- builder body
+    -- 构建主体（用于存放Class信息）
     local builder = generateBuilderBody(ParentClass,ClassName)
+    -- 为主体添加方法
     setmetatable(builder,builderMethod)
     return builder
 end
