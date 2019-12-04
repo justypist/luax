@@ -9,6 +9,8 @@ local base = {}
 local Object = generateBuilder(nil,"Object")
 local getClassName = import("../oop/tools/getClassName")
 local getParent = import("../oop/tools/getParent")
+local clone = import("../common/base/clone")
+local extend = import("../oop/core/extend")
 
 -- 派生
 Object:method("drive",function(this,ClassName)
@@ -37,6 +39,9 @@ Object:method("getFullClassName",function(this)
 end)
 Object:method("getParent",function(this)
     return getParent(this)
+end)
+Object:method("clone",function(this)
+    return extend(clone(this),this)
 end)
 
 
