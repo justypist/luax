@@ -30,6 +30,11 @@ Array:method("empty",function(this)
     this.value={}
     return this
 end)
-
+Array:method("push",function(this,value)
+    return this:insert(value)
+end)
+Array:method("pop",function(this)
+    return this:remove()
+end)
 
 return Array:build()
