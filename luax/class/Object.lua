@@ -28,14 +28,12 @@ Object:method("getClassName",function(this)
     return getClassName(this)
 end)
 Object:method("getFullClassName",function(this)
-    local parent = this:getParent()
-    if parent~=nil then
-        -- dump(parent:getClassName())
-        return parent:getFullClassName()
-            .."."..this:getClassName()
-    else
-        return this:getClassName()
-    end
+    return
+            this:getParent()~=nil
+        and
+            this:getParent():getFullClassName().."."..this:getClassName()
+        or
+            this:getClassName()
 end)
 Object:method("getParent",function(this)
     return getParent(this)
