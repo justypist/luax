@@ -23,7 +23,7 @@ local generateBuilderBody = function(ParentClass,ClassName)
     -- 静态属性、方法存储区
     builder[KW.STATIC]={}
     -- 继承
-    setmetatable(builder[KW.METAFIELD]["__index"],getmetatable(ParentClass))
+    setmetatable(builder[KW.METAFIELD][KW.METHOD],ParentClass==nil and nil or getmetatable(ParentClass))
     return builder
 end
 return generateBuilderBody;

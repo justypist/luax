@@ -40,7 +40,7 @@ local builderMethod = {
             -- 装饰构造函数
             builder[KW.METAFIELD][KW.CONSTRUCTOR] = function(class,...)
                 -- 获取父类中的属性
-                local parentAttr = (getmetatable(parentClass) or {})[KW.ATTRIBUTE] or {}
+                local parentAttr = (parentClass~=nil and getmetatable(parentClass) or {})[KW.ATTRIBUTE] or {}
                 -- 获取当前类的属性
                 local thisatr = clone(builder[KW.METAFIELD][KW.ATTRIBUTE])
                 -- 将父类属性与当前类属性整合为完整的类属性

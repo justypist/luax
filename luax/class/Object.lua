@@ -6,7 +6,7 @@
 ]]
 local generateBuilder = import("../oop/core/generateBuilder")
 local base = {}
-local Object = generateBuilder({},"Object")
+local Object = generateBuilder(nil,"Object")
 local getClassName = import("../oop/tools/getClassName")
 local getParent = import("../oop/tools/getParent")
 
@@ -26,6 +26,16 @@ end)
 -- getFullClassName
 Object:method("getClassName",function(this)
     return getClassName(this)
+end)
+Object:method("getFullClassName",function(this)
+    local parent = this:getParent()
+    if parent~=nil then
+        -- dump(parent:getClassName())
+        return parent:getFullClassName()
+            .."."..this:getClassName()
+    else
+        return this:getClassName()
+    end
 end)
 Object:method("getParent",function(this)
     return getParent(this)
