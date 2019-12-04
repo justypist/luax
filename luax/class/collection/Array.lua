@@ -8,8 +8,12 @@ Array:attr("value",{})
 Array:constructor(function(this,value)
     this.value = value or this.value
 end)
-Array:method("insert",function(this,value)
-    table.insert(this.value,value)
+Array:method("insert",function(this,index,value)
+    if value==nil then
+        table.insert(this.value,index)
+    else
+        table.insert(this.value,index,value)
+    end
     return this
 end)
 Array:method("remove",function(this,index)
@@ -26,5 +30,6 @@ Array:method("empty",function(this)
     this.value={}
     return this
 end)
+
 
 return Array:build()
