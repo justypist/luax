@@ -4,7 +4,6 @@
 ]]
 local foreach = import("../../common/functional/foreach")
 local clone = import("../../common/base/clone")
-local Noop = import("../../common/base/Noop")
 local KW = import("KW")
 local builderMethod = {
     __index={
@@ -13,11 +12,11 @@ local builderMethod = {
             return builder
         end,
         method=function(builder,fnName,fnBody)
-            builder[KW.METAFIELD]["__index"][fnName]=fnBody
+            builder[KW.METAFIELD][KW.METHOD][fnName]=fnBody
             return builder
         end,
         meta=function(builder,metaName,metaValue)
-            assert(metaName~="__index" and metaName~="__call","禁止直接修改__index/__call字段",2)
+            assert(metaName~=KW.METHOD and metaName~=KW.CONSTRUCTOR,"禁止直接修改__index/__call字段",2)
             builder[KW.METAFIELD][metaName]=metaValue
             return builder
         end,
@@ -26,20 +25,20 @@ local builderMethod = {
             return builder
         end,
         constructor=function(builder,fn)
-            builder[KW.METAFIELD]["__call"]=fn
+            builder[KW.METAFIELD][KW.CONSTRUCTOR]=fn
             return builder
         end,
         build=function(builder)
             -- 将静态属性作为class主体
             local class = builder[KW.STATIC]
             -- 获取父类
-            local parentClass = builder[KW.PARENT]
+            local parentClass = builder[KW.METAFIELD][KW.PARENT]
             -- 为class主体添加元表（赋予Class特性）
             setmetatable(class,builder[KW.METAFIELD])
             -- 提取构造函数
-            local constructor = builder[KW.METAFIELD]["__call"] or Noop
+            local constructor = builder[KW.METAFIELD][KW.CONSTRUCTOR]
             -- 装饰构造函数
-            builder[KW.METAFIELD]["__call"] = function(class,...)
+            builder[KW.METAFIELD][KW.CONSTRUCTOR] = function(class,...)
                 -- 获取父类中的属性
                 local parentAttr = (getmetatable(parentClass) or {})[KW.ATTRIBUTE] or {}
                 -- 获取当前类的属性
