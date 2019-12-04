@@ -17,8 +17,7 @@ Array:method("remove",function(this,index)
     if index>#this.value or index<1 then
         error("数组越界,数组长度为"..#this.value.."，而即将去除的索引位置为"..index,2)
     end
-    table.remove(this.value,index)
-    return this
+    return table.remove(this.value,index)
 end)
 Array:method("length",function(this)
     return #this.value
