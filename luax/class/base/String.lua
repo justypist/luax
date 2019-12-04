@@ -6,7 +6,10 @@ local String = import("Base"):drive("String")
 
 String:attr("value","")
 String:constructor(function(this,string)
-    this.value = string or this.value
+    this.value = tostring(string) or this.value
+end)
+String:method("tonumber",function(this)
+    return tonumber(this.value)
 end)
 
 return String:build()
