@@ -39,7 +39,7 @@ end)
 meta.setMetaField(_ENV,"__index",function(ENV,k)
     local v = rawget(ENV,k)
     if not v then
-        error("全局变量["..stringify(k).."]未定义",2)
+        error("变量["..stringify(k).."]未定义",2)
     end
     return v
 end)
