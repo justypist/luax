@@ -64,6 +64,9 @@ Object:method("instanceOf",function(this,parentClass)
         return v==parentClass
     end) and true or false
 end)
+Object:method("equal",function(this,instance)
+    return this == instance
+end)
 
 -- 静态属性
 -- 版本
