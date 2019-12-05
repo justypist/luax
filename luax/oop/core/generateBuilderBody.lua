@@ -11,6 +11,8 @@ local generateBuilderBody = function(ParentClass,ClassName)
     builder[KW.METAFIELD]={}
     -- 类名
     builder[KW.METAFIELD][KW.CLASSNAME]=ClassName
+    -- 类主体
+    builder[KW.METAFIELD][KW.CLASS]=nil
     -- 对象标识符
     builder[KW.METAFIELD][KW.ISOBJECT]=true
     -- 对象方法存储区

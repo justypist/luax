@@ -9,6 +9,7 @@ local KW={
     METAFIELD="__metafield",
     STATIC="__static",
     CLASSNAME="__classname",
+    CLASS="__class",
     PARENT="__parent",
     ISOBJECT="__isobject"
 }

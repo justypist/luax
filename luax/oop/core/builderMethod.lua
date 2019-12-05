@@ -31,6 +31,8 @@ local builderMethod = {
         build=function(builder)
             -- 将静态属性作为class主体
             local class = builder[KW.STATIC]
+            -- 保存类主体至元字段
+            builder[KW.METAFIELD][KW.CLASS]=class
             -- 获取父类
             local parentClass = builder[KW.METAFIELD][KW.PARENT]
             -- 为class主体添加元表（赋予Class特性）
